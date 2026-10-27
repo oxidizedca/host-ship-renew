@@ -1,7 +1,7 @@
 name: HostShip Auto Renew
 on:
   schedule:
-    - cron: '15 3 */5 * *'   
+    - cron: '00 8 */5 * *'   
   workflow_dispatch:
 permissions:
   contents: write   # Keep Repo Active 步骤需要 push 权限
@@ -10,7 +10,7 @@ permissions:
 jobs:
   renew-job:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v6
